@@ -3,6 +3,7 @@ $page-background: rgba(229, 231, 235, 0.4);
 $overlay-background: rgba(0,0,0, 0.4);
 $input-border: #E5E7EB;
 $shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+$button-background: #596D48;
 
 * {
     box-sizing: border-box;
@@ -75,10 +76,32 @@ img {
 
 .sign-up-form-container{
     width: 100%;
+}
+
+.complete-form{
+    margin: 2% 25% 0 5%;
 
     button{
-        margin: 2% 25% 0 5%;
+        padding: 15px 50px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: $shadow;
+        color: white;
+        font-weight: bold;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: $button-background;
     }
+
+    h5{
+        font-weight: normal;
+        a{
+            font-weight: bold;
+            color: $button-background
+        }
+    }
+
 }
 
 .main-form-content{
@@ -123,6 +146,5 @@ img {
         box-shadow: $shadow;
     }
 }
-
 
   
