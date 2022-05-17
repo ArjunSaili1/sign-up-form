@@ -1,7 +1,16 @@
+
+$page-background: rgba(229, 231, 235, 0.4);
+$overlay-background: rgba(0,0,0, 0.4);
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+@font-face {
+    font-family: Norse;
+    src: url(../dist/assets/Norse-Bold.otf);
 }
   
 body {
@@ -13,18 +22,15 @@ img {
     height: 100%;
 }
 
+.page-flex {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
 .side-img {
     position: relative;
     flex: 1 1 30%;
-}
-
-.main-content {
-    flex: 1 1 70%;
-}
-
-@font-face {
-    font-family: Norse;
-    src: url(../dist/assets/Norse-Bold.otf);
 }
 
 .odin-overlay{
@@ -35,7 +41,7 @@ img {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: rgba(0,0,0, 0.4);
+    background-color: $overlay-background;
     padding: 2% 0;
 
     img {
@@ -50,10 +56,52 @@ img {
     }
 }
 
-.page-flex {
+%form-field{
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    flex-direction: column;
+    gap: 5px;
 }
-  
+
+.main-content {
+    flex: 1 1 70%;
+    background-color: $page-background; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10%;
+
+    .intro-text{
+        padding: 0 25% 0 5%;
+    }
+}
+
+.sign-up-form-container{
+    width: 100%;
+
+    h2, button {
+        margin: 0 25% 0 5%;
+    }
+
+    button{
+        margin-top: 2%;
+    }
+
+    h2{
+        margin-bottom: 2%;
+    }
+}
+
+.main-form-content{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 0 25% 0 5%;
+
+    div {
+        @extend %form-field;
+    }
+}
+
+
+
   
