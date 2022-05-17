@@ -125,6 +125,10 @@ img {
   margin-bottom: 1.5%;
 }
 
+.error, .form-section #password:invalid, .form-section #confirm-password:invalid {
+  border-color: red;
+}
+
 .form-section {
   display: flex;
   flex-direction: column;
@@ -146,8 +150,13 @@ img {
   appearance: none;
   outline: none;
 }
-.form-section #password:invalid, .form-section #confirm-password:invalid {
-  border-color: red;
+.form-section h5 {
+  visibility: hidden;
+}
+.form-section #password:invalid + h5 {
+  visibility: visible;
+  color: red;
+  display: block;
 }
 .form-section input:focus {
   border-color: blue;

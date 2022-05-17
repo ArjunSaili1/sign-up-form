@@ -141,6 +141,10 @@ img {
     }
 }
 
+.error{
+    border-color: red
+}
+
 .form-section{
     display: flex;
     flex-direction: column;
@@ -164,8 +168,18 @@ img {
         outline: none;
     }
 
+    h5{
+        visibility: hidden;
+    }
+
     #password:invalid, #confirm-password:invalid {
-        border-color: red;
+        @extend .error;
+    }
+
+    #password:invalid + h5{
+        visibility: visible;
+        color: red;
+        display: block;
     }
 
     input:focus{
